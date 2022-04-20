@@ -9,7 +9,8 @@ public enum KeyProperties implements Constant<String> {
     ENVIRONMENT("Environment"),
     ORANGE_LOGIN("Orange.login"),
     ORANGE_USER("Orange.user"),
-    ORANGE_PASS("Orange.pass");
+    ORANGE_PASS("Orange.pass"),
+    EXAMPLE_HOMEPAGE("Example.homePage");
 
     private String value;
 
