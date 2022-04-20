@@ -14,7 +14,7 @@ import utils.constants.KeyProperties;
 public class ExampleHomePage extends PageObject {
 
     @Step("Navigate to the home page")
-    public void toTheHomePage(){
+    public void toTheHomePage() {
         PropertySource prop = new PropertySource();
         openUrl(prop.getProperty(KeyProperties.EXAMPLE_HOMEPAGE.getValue()));
     }
