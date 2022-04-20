@@ -18,7 +18,8 @@ public class HomePage extends PageObject {
     @Step("This step will allow us to login to application for user {0}")
     public void enterCredentials(String user, String password) {
         $(By.id("txtUsername")).type(user);
-        $(By.id("txtPassword")).typeAndEnter(password);
+        $(By.id("txtPassword")).type(password);
+        $(By.id("btnLogin")).click();
     }
 
     @Step("This step will verify the dashboard")

@@ -7,8 +7,9 @@ package utils.constants;
 public enum KeyProperties implements Constant<String> {
     PROPERTIES_FILES("application.properties"),
     ENVIRONMENT("Environment"),
-    BASE_URI("RestAssured.baseURI"),
-    PORT("RestAssured.port");
+    ORANGE_LOGIN("Orange.login"),
+    ORANGE_USER("Orange.user"),
+    ORANGE_PASS("Orange.pass");
 
     private String value;
 
