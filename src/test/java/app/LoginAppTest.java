@@ -30,7 +30,7 @@ public class LoginAppTest {
     @Title("Login to orange hrm site as admin.")
     public void loginAsAdmin() {
         PropertySource prop = new PropertySource();
-        driver.get(prop.getProperty(KeyProperties.ORANGE_LOGIN.getValue()));
+        home.toTheOrangeHomePage();
         Assert.assertEquals("OrangeHRM", home.verifyTitle());
         home.enterCredentials(
                 prop.getProperty(KeyProperties.ORANGE_USER.getValue()),

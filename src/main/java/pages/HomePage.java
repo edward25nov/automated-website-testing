@@ -1,8 +1,11 @@
 package pages;
 
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.WhenPageOpens;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
+import utils.PropertySource;
+import utils.constants.KeyProperties;
 
 /**
  * @author Edward
@@ -25,6 +28,18 @@ public class HomePage extends PageObject {
     @Step("This step will verify the dashboard")
     public String verifyDashboard() {
         return getDriver().getCurrentUrl();
+    }
+
+    @Step("Navigate to the OrangeHRM home page")
+    public void toTheOrangeHomePage() {
+        PropertySource prop = new PropertySource();
+        openUrl(prop.getProperty(KeyProperties.ORANGE_LOGIN.getValue()));
+    }
+
+    @WhenPageOpens
+    @Step("Maximize our browser")
+    public void maximiseScreen() {
+        getDriver().manage().window().maximize();
     }
 
 }

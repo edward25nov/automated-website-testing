@@ -31,6 +31,12 @@ public class ExampleHomePage extends PageObject {
         return new DropdownPage();
     }
 
+    @Step("Navigate to Dynamic Loading Page")
+    public DynamicLoadingPage clickDynamicLoading(){
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage();
+    }
+
     private void clickLink(String linkText) {
         $(By.linkText(linkText)).click();
     }
