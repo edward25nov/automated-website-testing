@@ -102,46 +102,51 @@
                         <include>**/*Test.java</include>
                         <include>**/Test*.java</include>
                     </includes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.serenity-bdd.maven.plugins</groupId>
-                <artifactId>serenity-maven-plugin</artifactId>
-                <version>${serenity.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.serenity-bdd</groupId>
-                        <artifactId>serenity-core</artifactId>
-                        <version>${serenity.version}</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>serenity-reports</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>aggregate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-</project>
+                    <!-- Parallel execution in the same JVM -->
+                    <!--  https://serenity-bdd.github.io/theserenitybook/latest/serenity-parallel.html#_running_tests_in_parallel_threads -->
+                    <!-- <parallel>classes</parallel>
+                     <threadCount>2</threadCount>
+                     <forkCount>2C</forkCount> -->
+                 </configuration>
+                 <executions>
+                     <execution>
+                         <goals>
+                             <goal>integration-test</goal>
+                             <goal>verify</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+             </plugin>
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-compiler-plugin</artifactId>
+                 <version>${maven-compiler-plugin.version}</version>
+                 <configuration>
+                     <source>${java.version}</source>
+                     <target>${java.version}</target>
+                 </configuration>
+             </plugin>
+             <plugin>
+                 <groupId>net.serenity-bdd.maven.plugins</groupId>
+                 <artifactId>serenity-maven-plugin</artifactId>
+                 <version>${serenity.version}</version>
+                 <dependencies>
+                     <dependency>
+                         <groupId>net.serenity-bdd</groupId>
+                         <artifactId>serenity-core</artifactId>
+                         <version>${serenity.version}</version>
+                     </dependency>
+                 </dependencies>
+                 <executions>
+                     <execution>
+                         <id>serenity-reports</id>
+                         <phase>post-integration-test</phase>
+                         <goals>
+                             <goal>aggregate</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+             </plugin>
+         </plugins>
+     </build>
+ </project>
