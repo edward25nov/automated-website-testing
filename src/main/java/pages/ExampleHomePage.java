@@ -21,7 +21,7 @@ public class ExampleHomePage extends PageObject {
 
     @WhenPageOpens
     @Step("Maximize our browser")
-    public void maximiseScreen() {
+    public void maximizeScreen() {
         getDriver().manage().window().maximize();
     }
 

@@ -16,13 +16,13 @@ public class DynamicLoadingExample2Page extends PageObject {
     @FindBy(css = "#start button")
     private WebElementFacade startButton;
 
-    private final By loadedText = By.id("finish");
+    private final By LOADED_TEXT = By.id("finish");
 
     @Step("Load hidden word using explicit timeouts")
     public String clickStartButton1() {
         startButton.click();
-        waitFor(ExpectedConditions.presenceOfElementLocated(loadedText)).isDisplayed();
-        return $(loadedText).getText();
+        waitFor(ExpectedConditions.presenceOfElementLocated(LOADED_TEXT)).isDisplayed();
+        return $(LOADED_TEXT).getText();
     }
 
 }

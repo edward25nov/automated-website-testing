@@ -11,8 +11,6 @@ import net.serenitybdd.core.annotations.findby.FindBy;
  */
 public class DynamicLoadingPage extends PageObject {
 
-    private final String linkXpath_Format = ".//a[contains(text(), '%s')]";
-
     @FindBy(xpath = ".//a[contains(text(), \"Example 1\")]")
     private WebElementFacade link_Example1;
 
